@@ -1,0 +1,36 @@
+<div class="text-center">
+    <main class="form-signin">
+      <form [formGroup]="signInFrom" (ngSubmit)="onSubmit()" ngNativeValidate>
+
+        <div class="form-floating mb-1">
+            <input type="text" class="form-control" id="name" placeholder="Jose Maria Gomes" formControlName="name" required>
+            <label for="name">Nome</label>
+          </div>
+        <div class="form-floating mb-1">
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="form-floating mb-1">
+          <input type="tel" class="form-control" id="cell" placeholder="(00) 90000-0000" mask="(00) 00000-0000" formControlName="cell" required>
+          <label for="email">Celular</label>
+        </div>
+        <div class="form-floating mb-1">
+          <input type="password" class="form-control" id="password" placeholder="password" formControlName="password" required>
+          <label for="password">Senha</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="confirmpassword" placeholder="Confirmar Senha" formControlName="confirmpassword" required>
+            <label for="confirmpassword">Confirmar Senha</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-dark" type="submit">Login</button>
+        <a [routerLink]="['/login']"><p class="text-danger"><b>Cancelar</b></p></a>
+      </form>
+    </main>
+  </div>
+      
+  <footer class="fixed-bottom footer text-end">
+    <div>
+      <p class="text-muted" style="margin-bottom: 0;">&copy; Cesar Falanque {{ year }}&nbsp;&nbsp;&nbsp;</p>
+    </div>
+  </footer>
+  

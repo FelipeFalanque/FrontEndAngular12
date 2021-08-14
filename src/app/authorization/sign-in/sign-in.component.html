@@ -1,0 +1,52 @@
+<div class="text-center">
+  <main class="form-signin">
+    <form [formGroup]="signInFrom" (ngSubmit)="onSubmit()" ngNativeValidate>
+
+      <img src="../assets/images/logo01.jpg" alt="" width="230" height="230">
+      <h4 class="mb-3 fw-normal text-secondary">{{ mensagem }}</h4>
+  
+      <div class="form-floating"  *ngIf="optionChecked=='email'">
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email" required>
+        <label for="email">Email</label>
+      </div>
+      <div class="form-floating" *ngIf="optionChecked=='cell'">
+        <input type="tel" class="form-control" id="cell" placeholder="(00) 90000-0000" mask="(00) 00000-0000" formControlName="cell" required>
+        <label for="email">Celular</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="password" placeholder="password" formControlName="password" required>
+        <label for="password">Senha</label>
+      </div>
+  
+      <div class="checkbox mb-3">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="options-sign-in" id="option-email" value="email" checked (change)="onItemChange($event.target)">
+          <label class="form-check-label" for="option-email">Email</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="options-sign-in" id="option-cell" value="cell" (change)="onItemChange($event.target)">
+          <label class="form-check-label" for="option-cell">Celular</label>
+        </div>
+      </div>
+      <button class="w-100 btn btn-lg btn-dark" type="submit">Login</button>
+      <a [routerLink]="['/signup']"><p class="text-secondary">Criar nova conta</p></a>
+    </form>
+  </main>
+</div>
+    
+<footer class="fixed-bottom footer text-end">
+  <div>
+    <p class="text-muted" style="margin-bottom: 0;">&copy; Cesar Falanque {{ year }}&nbsp;&nbsp;&nbsp;</p>
+  </div>
+</footer>
+
+<div class="d-flex justify-content-center align-items-center w-100">
+<div class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true" id="toast-error">
+  <div class="d-flex">
+    <div class="toast-body">
+      Senha ou usuário incorreto.
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>
+</div>
