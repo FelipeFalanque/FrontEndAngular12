@@ -59,6 +59,7 @@ export class SignInComponent implements OnInit {
     this._authService.login(login).subscribe(
       (resp) => {
         this._tokenHelper.setToken(resp.token);
+        this._router.navigate(['home']);
       },
       (error) => {
         console.log(error);

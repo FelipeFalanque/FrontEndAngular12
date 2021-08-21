@@ -26,12 +26,14 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     // retorno o request com o erro tratado
-    return next.handle(request)
-      .pipe(
+    return next.handle(request);
+    /*  .pipe(
         catchError(this.handleError)
       );
+    */ 
   }
 
+  /*
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // Erro de client-side ou de rede
@@ -45,4 +47,5 @@ export class AuthInterceptor implements HttpInterceptor {
     // retornar um observable com uma mensagem amigavel.
     return throwError('Ocorreu um erro, tente novamente');
   }
+  */
 }

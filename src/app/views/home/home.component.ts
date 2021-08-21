@@ -1,3 +1,4 @@
+import { User } from './../../models/user';
 import { UserHelper } from './../../helpers/user-helper';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,9 +11,12 @@ export class HomeComponent implements OnInit {
 
   constructor(private _userHelper: UserHelper) { }
 
+  navbarShow = false;
+  userCorrent: User = new User();
+
   ngOnInit(): void {
 
-    console.log(this._userHelper.getCurrentUser());
+    this.userCorrent = this._userHelper.getCurrentUser();
 
   }
 

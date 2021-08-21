@@ -14,13 +14,16 @@ import { HomeComponent } from './views/home/home.component';
 
 import { httpInterceptorProviders } from './interceptors/index';
 import { TokenHelper } from './helpers/token-helper';
+import { UserHelper } from './helpers/user-helper';
+import { NavbarComponent } from './views/shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { TokenHelper } from './helpers/token-helper';
   ],
   providers: [
     httpInterceptorProviders,
-    TokenHelper
+    TokenHelper,
+    UserHelper
   ],
   bootstrap: [
     AppComponent
